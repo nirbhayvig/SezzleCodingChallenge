@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Sezzle coding challenge</title>
     <script> 
       //function that display value 
       function dis(val)
@@ -14,7 +14,7 @@
       { 
           let x = document.getElementById("result").value
           let y = eval(x) 
-          document.getElementById("result").value = x + "=" + y 
+          document.getElementById("result").value = x + " = " + y 
       } 
 
       //function that clear the display 
@@ -25,17 +25,14 @@
    </script>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div style="display: flex; justify-content: center; align-items: center; height: 200px; border: 3px solid green;">
+    <h1 style="margin: auto;">Nirbhay Vig Sezzle Coding Challenge</h1>
     <form id="form" actions="">
-    <div class = title >GeeksforGeeks Calculator</div> 
     <table border="1"> 
        <tr> 
-          <td colspan="3"><input type="text" id="result"/></td> 
-          <!-- clr() function will call clr to clear all value -->
+          <td colspan="4"><input type="text" id="result" style="width: 172px;"/></td>
        </tr> 
-       <tr> 
-          <!-- create button and assign value to each button -->
-          <!-- dis("1") will call function dis to display value -->
+       <tr>
           <td><input type="button" value="1" onclick="dis('1')"/> </td> 
           <td><input type="button" value="2" onclick="dis('2')"/> </td> 
           <td><input type="button" value="3" onclick="dis('3')"/> </td> 
@@ -56,12 +53,16 @@
        <tr> 
           <td><input type="button" value="." onclick="dis('.')"/> </td> 
           <td><input type="button" value="0" onclick="dis('0')"/> </td> 
-          <td><input type="button" value="c" onclick="clr()"/> </td> 
+          <td><input type="button" value="C" onclick="clr()"/> </td> 
           <td><input type="button" value="*" onclick="dis('*')"/> </td> 
        </tr> 
+       <tr><td colspan="4">
+           <button onclick="solve()" style="width: 180px;">=</button>
+        </td></tr>
     </table>
-    <button onclick="solve()">Evaluate</button>
   </form> 
+  <ul id="messages" style="list-style-type: none; margin: auto; padding: 0"></ul>
+</div>
     <script src="/socket.io/socket.io.js"></script>
           
 
